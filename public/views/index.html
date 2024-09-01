@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Learn Deutsch | Home Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #ffc107;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+        }
+        .spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body style="background-color: red;">
+  <!--Spinner-->
+    <div id="spinner-container" class="spinner-container">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!--/Spinner-->
+    <!--Navbar-->
+    <div class="container-fluid bg-dark p-3">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><b><i>DEUTSCH</i></b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i> Startseite</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Über uns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-journal-check"></i> Übungen</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+   <!--/Navbar-->
+    <main class="container my-5">
+      <!--  <section>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="text-center mb-4"><b>1.</b> Hoşgeldiniz, hazırsanız başlayalım.</h1>
+                    <p class="text-center" id="question"></p>
+                    <div class="input-group input-group-sm mb-3">
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Cevap">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary" onclick="click()">Sonraki</button>
+                        <button class="btn btn-primary">Test Et</button>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <footer class="bg-warning text-white">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <h5 class="text-uppercase mt-2 p-3">Fußzeileninhalt</h5>
+                    <div class="p-2"><p class="">Hier können Sie Fußzeileninhalt hinzufügen. Zum Beispiel eine kurze Information über Ihre Website oder Kontaktinformationen.</p> 
+                    <div class="btn btn-outline-secondary text-white rounded-pill">Mehr erfahren</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <h5 class="text-uppercase mt-2 p-3">Links</h5>
+                    <ul class="list-unstyled">
+                      <li><div class="btn btn  "><a href="#!" class="text-white">Link 1</a></div> </li>
+                      <li><div class=" btn btn "><a href="#!" class="text-white"> Link 2</a></div></li>
+                      <li><div class=" btn btn "><a href="#!"  class="text-white">Link 3</a></div></li>
+                      <li><div class=" btn btn "><a href="#!"  class="text-white">Link 4</a></div></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <h5 class="text-uppercase mt-2 p-3">Kontakt</h5>
+                    <ul class="list-unstyled ">
+                        <li> <div class="mt-2 text-white"><a href="#"  class="text-white">E-Mail Adresse: info@example.com</a></div></li>
+                        <li><div class="mt-2"><a href="#"  class="text-white">Telefonnummer: +123 456 7890</a></div></li>
+                        <li><div class="mt-2"><a href="#" class="text-white">Adresse: 123 Street, City, Country</a></div></li>
+                    </ul>
+                    <div class="d-grid gap-3 d-md-block ">
+                      <a href="#" class="btn btn-outline-secondary mx-2 mt-2 rounded-pill"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#" class="btn btn-outline-secondary mx-2 mt-2 rounded-pill "><i class="bi bi-instagram"></i></a>
+                      <a href="#" class="btn btn-outline-secondary mx-2 mt-2 rounded-pill"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Your Company:
+            <a class="text-white" href="https://yourwebsite.com/">yourwebsite.com</a>
+        </div>
+        
+    </footer>
+
+    <script>
+        const words = ["der", "die", "das", "und", "sein", "haben", "ich", "du", "er", "sie", "es", "wir", "ihr", "sie", "Sie", "ein", "eine", "nicht", "ja", "nein", "bitte", "danke", "gut", "schlecht", "groß", "klein", "alt", "jung", "neu", "schön", "hässlich", "teuer", "billig", "schnell", "langsam", "heiß", "kalt", "warm", "kühl", "essen", "trinken", "gehen", "kommen", "sehen", "hören", "sprechen", "schreiben", "lesen", "lernen", "spielen", "kaufen", "verkaufen", "arbeiten", "wohnen", "schlafen", "aufstehen", "sitzen", "stehen", "liegen", "fragen", "antworten", "öffnen", "schließen", "machen", "tun", "geben", "nehmen", "bringen", "zeigen", "erklären", "finden", "suchen", "verlieren", "gewinnen", "lieben", "mögen", "hassen", "wissen", "kennen", "verstehen", "brauchen", "wollen", "müssen", "können", "dürfen", "sollen", "anfangen", "aufhören", "beginnen", "beenden", "bleiben", "fahren", "fliegen", "laufen", "schwimmen", "springen"];
+
+        function click() {
+            var y = Math.floor(Math.random() * words.length);
+            const z = words[y];
+            document.getElementById('change').textContent = "Kelimenin Anlamı Nedir?";
+            document.getElementById('question').textContent = z;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('spinner-container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
