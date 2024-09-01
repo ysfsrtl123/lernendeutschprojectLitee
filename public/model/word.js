@@ -1,6 +1,5 @@
 const words = [
-    {id: 1 , q:'schreiben' , answer: 'yazmak'},
-    {id: 2 , q:'nur' , answer: 'sadece'}
+   {id:40, q:"nur" , answer:"sadece"}
 ];
     
 
@@ -19,21 +18,24 @@ class Word {
         words.push(this);
     }
 
-    getWordById(id) {
+   static getWordById(id) {
         return words.find(word => word.id === id);
     }
 
-    updateWord(id, updatedWord) {
+   static updateWord(id, updatedWord) {
         const index = words.findIndex(word => word.id === id);
         if (index !== -1) {
             words[index] = { ...words[index], ...updatedWord };
         }
     }
 
-    deleteWord(id) {
+   static deleteWord(id) {
         const index = words.findIndex(word => word.id === id);
         if (index !== -1) {
             words.splice(index, 1);
+            console.log(`Kelime ID: ${index} silindi`)
+        } else{
+            console.log(`Kelime ID: ${index} bulunamadı`);
         }
     }
 }

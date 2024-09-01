@@ -50,16 +50,27 @@ exports.postaddword = (req, res, next) => {
 exports.postDeleteWord = (req,res,next) => {
     const wordId = parseInt(req.params.id); 
 
-    const wordIndex = words.findIndex(word => word.id === wordId); 
-
-    if (wordIndex !== -1) {
-        words.splice(wordIndex, 1); 
-        console.log(`Kelime ID ${wordId} silindi.`);
-    } else {
-        console.log(`Kelime ID ${wordId} bulunamadı.`);
-    }
-
+    Word.deleteWord(wordId);
     res.redirect('/admin/ubungen');
 };
 
-ex
+exports.getUpdateWord = (req, res, next) => {
+    const wordId = parseInt(req.params.id);
+    const word = Word.getWordById(wordId); 
+    const navbarTitle = 'Admin Update';
+    if (!word) {
+        return res.status(404).render('404', { title: 'Kelime Bulunamadı' });
+    }
+    res.render('update', { title: 'Kelime Güncelle', navbarTitle, word: word });
+};
+
+exports.postUpdateWord = (req, res, next) => {
+    const wordId = parseInt(req.params.id);
+    const updatedWord = {
+        q: req.body.q,
+        answer: req.body.answer
+    };
+
+    Word.updateWord(wordId, updatedWord); 
+    res.redirect('/admin/ubungen');
+};

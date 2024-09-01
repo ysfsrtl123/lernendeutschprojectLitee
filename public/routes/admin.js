@@ -8,5 +8,7 @@ router.get('/about', adminController.getAdminAbout);
 router.get('/ubungen', adminController.getAdminUbungen);
 router.post('/ubungen', adminController.postaddword);
 router.post("/ubungen/:id", adminController.postDeleteWord);
+router.get('/ubungen/update/:id', adminController.getUpdateWord);
+router.post('/ubungen/update/:id', adminController.postUpdateWord);
 
 module.exports = router;

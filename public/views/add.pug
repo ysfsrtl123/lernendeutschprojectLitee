@@ -67,7 +67,8 @@ html
               td= word.q
               td= word.answer
               td 
-                form(action="/admin/ubungen/#{word.id}" method="POST" style="display: inline;")
+                form(action=`/admin/ubungen/update/${word.id}` method="GET" style="display: inline;")
+                  input(type="hidden" name="_update" value="UPDATE")
                   button.btn.btn-primary.mx-2(type="submit") Güncelle 
                 form(action=`/admin/ubungen/${word.id}` method="POST" style="display: inline;")
                   input(type="hidden" name="_method" value="DELETE")
