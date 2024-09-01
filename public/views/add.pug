@@ -67,16 +67,17 @@ html
               td= word.q
               td= word.answer
               td 
-                 form(action="") 
-                 button.btn.btn-primary.mx-2(type="submit") Güncelle 
-                 form(action=`/admin/ubungen/${word.id}?_method=DELETE` method="POST" style="display: inline;") 
-                 button.btn.btn-primary(type="submit") Sil
+                form(action="/admin/ubungen/#{word.id}" method="POST" style="display: inline;")
+                  button.btn.btn-primary.mx-2(type="submit") Güncelle 
+                form(action=`/admin/ubungen/${word.id}` method="POST" style="display: inline;")
+                  input(type="hidden" name="_method" value="DELETE")
+                  button.btn.btn-danger(type="submit") Sil
 
-      form(action="/admin/ubungen", method="POST")
+      form(action="/admin/ubungen" method="POST")
         .input-group.input-group-sm.mb-3
-          input.form-control(name="q", aria-label="Sizing input" aria-describedby="inputGroup-sizing-sm" placeholder="Kelime ekle")
+          input.form-control(name="q" aria-label="Sizing input" aria-describedby="inputGroup-sizing-sm" placeholder="Kelime ekle")
         .input-group.input-group-sm.mb-3
-          input.form-control(name="addAnswer", aria-label="Sizing input" aria-describedby="inputGroup-sizing-sm" placeholder="Cevabı ekle")
+          input.form-control(name="addAnswer" aria-label="Sizing input" aria-describedby="inputGroup-sizing-sm" placeholder="Cevabı ekle")
         .d-flex.justify-content-between
           button.btn.btn-primary.mt-2(type="submit") Ekle 
 
