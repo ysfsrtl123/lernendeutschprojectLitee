@@ -59,12 +59,18 @@ html
             th id
             th Kelime
             th Cevap
+            th Güncelle/Sil
         tbody
           each word in words || []
             tr 
               td= word.id 
               td= word.q
               td= word.answer
+              td 
+                 form(action="") 
+                 button.btn.btn-primary.mx-2(type="submit") Güncelle 
+                 form(action=`/admin/ubungen/${word.id}?_method=DELETE` method="POST" style="display: inline;") 
+                 button.btn.btn-primary(type="submit") Sil
 
       form(action="/admin/ubungen", method="POST")
         .input-group.input-group-sm.mb-3
