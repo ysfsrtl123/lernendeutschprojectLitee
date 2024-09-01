@@ -1,4 +1,4 @@
-const { Word } = require('../model/word.js');
+const { Word,words } = require('../model/word.js');
 
 exports.getAdminHome = (req, res, next) => {
     const navbarTitle = 'Admin Login';
@@ -46,3 +46,20 @@ exports.postaddword = (req, res, next) => {
     console.log('Eklenen Kelime:', JSON.stringify(word, null, 2));
     res.redirect('/admin/ubungen');
 };
+
+exports.postDeleteWord = (req,res,next) => {
+    const wordId = parseInt(req.params.id); 
+
+    const wordIndex = words.findIndex(word => word.id === wordId); 
+
+    if (wordIndex !== -1) {
+        words.splice(wordIndex, 1); 
+        console.log(`Kelime ID ${wordId} silindi.`);
+    } else {
+        console.log(`Kelime ID ${wordId} bulunamadı.`);
+    }
+
+    res.redirect('/admin/ubungen');
+};
+
+ex
