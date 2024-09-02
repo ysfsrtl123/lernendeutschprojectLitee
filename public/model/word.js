@@ -1,5 +1,5 @@
 const words = [
-   {id:40, q:"nur" , answer:"sadece"}
+   {id:40, q:"wash" , answer:"yıkamak"}
 ];
     
 
@@ -10,8 +10,8 @@ class Word {
         this.answer = answer;
     }
 
-    static getAllWords() {
-        return words;
+    static getAllWords() { 
+        return words; 
     }
 
     addWord() {
@@ -26,6 +26,7 @@ class Word {
         const index = words.findIndex(word => word.id === id);
         if (index !== -1) {
             words[index] = { ...words[index], ...updatedWord };
+            console.log(`${Word.id} güncellendi`);
         }
     }
 
