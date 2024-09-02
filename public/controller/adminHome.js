@@ -22,10 +22,10 @@ exports.getAdminAbout = (req, res, next) => {
 
 exports.getAdminUbungen = (req, res, next) => {
     const navbarTitle = 'Admin Übungen';
-    const words = Word.getAllWords(); // words dizisini al
+    const words = Word.getAllWords(); 
     res.render('add', {
         navbarTitle,
-        words, // Pug şablonuna gönderilen veri
+        words,
         title: 'Admin Übungen',
         path: '/admin/ubungen',
         isAdmin: true 

@@ -1,4 +1,4 @@
-const { words, Word } = require('../model/word.js'); // word değil, words ve Word içe aktarılmalı
+const { words, Word } = require('../model/word.js'); 
 
 exports.getHome = (req, res, next) => {
     const navbarTitle = 'DEUTSCH';
